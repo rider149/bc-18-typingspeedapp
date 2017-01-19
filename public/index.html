@@ -41,7 +41,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Leadersboard</a>
+      <a class="navbar-brand" href="/leadersboard">Leadersboard</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul id = "demo" style="text-align:center" class="nav navbar-nav">
@@ -59,10 +59,10 @@
     <h1>Typing Speed App</h1>      
   <p>A simple app that measures how fast you can type. To begin click the "Start Typing" button and when you are done click the "done" button to display result</p></br>
 <FORM name="theForm">
-<textarea name="given" rows="5" cols="170" class="form-control" wrap=on onFocus="cheat()"></textarea></br>
+<textarea name="given" rows="5" cols="170" class="form-control" wrap=on onFocus="preventCopyAndPaste()"></textarea></br>
 <textarea rows="7" cols="170" name="typed" class="form-control"></textarea></br>
-<input type=button value="Start Typing" class="btn btn-default" name="start" onClick="beginIt()">
-<input type=button value="DONE"  name="stop"  class="btn btn-default" onClick="stopIt()">
+<input type=button value="Start Typing" class="btn btn-default" name="start" onClick="startTypingTest()">
+<input type=button value="DONE"  name="stop"  class="btn btn-default" onClick="stopTypingTest()">
 </FORM>
 </div>
 </div>

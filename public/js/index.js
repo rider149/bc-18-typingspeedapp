@@ -12,6 +12,10 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   // The signed-in user info.
   var user = result.user;
 
+  username = user.displayName;
+  localStorage.setItem("username", username);
+
+
   username = user.displayName
   profilePic = user.photoURL 
   // ...
@@ -25,7 +29,16 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var credential = error.credential;
   // ...
 });
+ 
+ var username = localStorage.getItem("username");
 
+ //function to retrieve User details
+    firebase.database().ref('/User/').once('value').then(function(snapshot){
+        var userDetails = snapshot.val();
+        //console.log(userDetails);
+        //getUsername(userDetails.name);
+        //setPicture(userDetails.profile_picture)
+    })
 
 
 function holdValues(totalTime,error,Gspd){
@@ -69,39 +82,39 @@ return count;
 }
 
 
-function beginIt() {
+function startTypingTest() {
 //Gets the time at the start of the app
 //Provides the user with a random text	
 randNum = Math.floor((Math.random() * 10)) % 4;
 msgType = msg[randNum];
 word=msgType.split(/\s+/);
 day = new Date();
-startType = day.getTime();
+startTime = day.getTime();
 document.theForm.given.value = msgType
 document.theForm.typed.focus();
 document.theForm.typed.select();
 }
 
-function cheat() {
+function preventCopyAndPaste() {
 	// Prevents the user from copy and paste
 alert("You can not change that!");
 document.theForm.typed.focus();
 }
 
-function stopIt() { 
+function stopTypingTest() { 
 // Performs the basic calculations for words per minute, time taken and mistakes made 
 dayTwo = new Date();
-endType = dayTwo.getTime();
+endTime = dayTwo.getTime();
 userwords= document.theForm.typed.value;
-words2=userwords.split(/\s+/);
-error=findMissing(words2,word);
-totalTime = ((endType - startType) / 1000);
+words=userwords.split(/\s+/);
+error=findMissing(words,word);
+totalTime = ((endTime - startTime) / 1000);
 Gspd = Math.round((word.length/totalTime) * 60);
 Nspd=Gspd-error;
 var accuracy= (Nspd/Gspd)*100;
 
 holdValues(totalTime,error,Gspd);
-alert("HERE ARE YOUR RESULTS:"+"\n\n"+"Time spent:"+totalTime+"\n\n"+"Speed:"+Gspd+"\n\n"+"Mistake:"+error+"\n\n");
+alert("HERE ARE YOUR RESULTS:"+"\n\n"+"Time spent:"+Math.round(totalTime)+"seconds\n\n"+"Speed:"+Gspd+"\n\n"+"Mistake:"+error+"\n\n");
 }
 
 
