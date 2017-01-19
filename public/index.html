@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Typing Speed App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAn1Qa-y3eEEf0oVCz-Srtx3a9EDxyN6ow",
+	    authDomain: "bc-18-typingspeedapp.firebaseapp.com",
+	    databaseURL: "https://bc-18-typingspeedapp.firebaseio.com",
+	    storageBucket: "bc-18-typingspeedapp.appspot.com",
+	    messagingSenderId: "140024497891"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+
+	
+
+
+	<script src="js/index.js"></script>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Leadersboard</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul id = "demo" style="text-align:center" class="nav navbar-nav">
+        
+       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Typing Speed App</h1>      
+  <p>A simple app that measures how fast you can type. To begin click the "Start Typing" button and when you are done click the "done" button to display result</p></br>
+<FORM name="theForm">
+<textarea name="given" rows="5" cols="170" class="form-control" wrap=on onFocus="cheat()"></textarea></br>
+<textarea rows="7" cols="170" name="typed" class="form-control"></textarea></br>
+<input type=button value="Start Typing" class="btn btn-default" name="start" onClick="beginIt()">
+<input type=button value="DONE"  name="stop"  class="btn btn-default" onClick="stopIt()">
+</FORM>
+</div>
+</div>
+<div id="footer" style="text-align:center">
+	Developed by Nwaokafor Francis, 2017
+</div>
+</body>
+
+</html>
