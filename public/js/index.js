@@ -33,13 +33,22 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
  var username = localStorage.getItem("username");
 
  //function to retrieve User details
-    firebase.database().ref('/User/').once('value').then(function(snapshot){
+    firebase.database().ref('/User/').orderByChild('wpm').once('value').then(function(snapshot){
         var userDetails = snapshot.val();
-        //console.log(userDetails);
+        console.log(userDetails);
         //getUsername(userDetails.name);
         //setPicture(userDetails.profile_picture)
     })
 
+$("#logout").on("click", function(){
+        firebase.auth().signOut().then(function() {
+          // Sign-out successful.
+          console.log("signout");
+          window.location.href = "/logout.html";
+        }, function(error) {
+          // An error happened.
+        });
+    })
 
 function holdValues(totalTime,error,Gspd){
 	//Uploads the values to firebase	

@@ -13,7 +13,7 @@ var username = localStorage.getItem("username");
  //function to retrieve User details
     firebase.database().ref('/User/').once('value').then(function(snapshot){
         var userDetails = snapshot.val();
-        alert(userDetails);
+      console.log(userDetails);
         //getUsername(userDetails.name);
         //setPicture(userDetails.profile_picture)
     })

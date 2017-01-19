@@ -16,6 +16,12 @@ app.get('/leadersboard', (req, res) => {
   // Note: __dirname is directory that contains the JavaScript source code. Try logging it and see what you get!
   // Mine was '/Users/zellwk/Projects/demo-repos/crud-express-mongo' for this app.
 })
+
+app.get('/logout', (req, res) => {
+  res.sendFile(__dirname + '/public/logout.html')
+  // Note: __dirname is directory that contains the JavaScript source code. Try logging it and see what you get!
+  // Mine was '/Users/zellwk/Projects/demo-repos/crud-express-mongo' for this app.
+})
 const pathName = __dirname + '/public';
 
 
