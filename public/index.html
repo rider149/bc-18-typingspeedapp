@@ -6,7 +6,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
 
+.jumbotron {
+  
+   posistion:relative;
+  z-index: 2;
+  box-shadow: 0 8px 16px -2px black;
+  
+}
+
+
+</style>
 </head>
 <body>
 
@@ -32,7 +43,6 @@
 
 
 	<script src="js/index.js"></script>
-	<script src="js/leadership.js"></script>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -44,7 +54,7 @@
       <a class="navbar-brand" href="/leadersboard">Leadersboard</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul id = "demo" style="text-align:center" class="nav navbar-nav">
+      <ul id = "demo" class="nav navbar-nav">
         
        </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -54,15 +64,15 @@
   </div>
 </nav>
 
-<div class="jumbotron">
-  <div class="container text-center">
+<div class="container text-center">
+  <div class="jumbotron">
     <h1>Typing Speed App</h1>      
-  <p>A simple app that measures how fast you can type. To begin click the "Start Typing" button and when you are done click the "done" button to display result</p></br>
-<FORM name="theForm">
+  <p class="text-muted">A simple app that measures how fast you can type. To begin click the "Start Typing" button and when you are done click the "done" button to display result</p></br>
+<FORM name="theForm" class="form-group">
 <textarea name="given" rows="5" cols="170" class="form-control" wrap=on onFocus="preventCopyAndPaste()"></textarea></br>
 <textarea rows="7" cols="170" name="typed" class="form-control"></textarea></br>
-<input type=button value="Start Typing" class="btn btn-default" name="start" onClick="startTypingTest()">
-<input type=button value="DONE"  name="stop"  class="btn btn-default" onClick="stopTypingTest()">
+<input type=button value="Start Typing" class="btn btn-default btn-lg" name="start" onClick="startTypingTest()">
+<input type=button value="DONE"  name="stop"  class="btn btn-default btn-lg" onClick="stopTypingTest()">
 </FORM>
 </div>
 </div>

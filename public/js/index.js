@@ -33,14 +33,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
  var username = localStorage.getItem("username");
 
  //function to retrieve User details
-    firebase.database().ref('/User/').orderByChild('wpm').once('value').then(function(snapshot){
-        var userDetails = snapshot.val();
-        console.log(userDetails);
-        //getUsername(userDetails.name);
-        //setPicture(userDetails.profile_picture)
-    })
-
-$("#logout").on("click", function(){
+   $("#logout").on("click", function(){
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
           console.log("signout");
@@ -65,10 +58,10 @@ function holdValues(totalTime,error,Gspd){
 
 
 <!-- Begin
-msg = new Array("Practicing with your typing can greatly help your overall computer skills.",
-"A new computer is sold in the US every hour!",
-"When do birds migrate from North to South?",
-"Perplexing phrases, like this one, are tougher to type.")
+msg = new Array("Mr. Edward Anthony Gomez, the lawyer to embattled President Yaya Jammeh of Gambia, has fled to Senegal and advised his client to step aside and respect the wishes of Gambian people as expressed in the presidential election results. Mr. Gomez said the decision to flee to Senegal along with his son was because of the increasing tension in Gambia and in the interest of peace and stability.The lawyer announced the development in a letter dated 17 January, which he personally signed. He said he escaped a round-the-clock security watch around his house to flee to neighboring Senegal, where he said he has now found some inner peace after being coerced to be part of President Jammeh’s plot to cling to power.",
+"Marketers under the aegis of Depot and Petroleum Products Marketers Association (DAPPMA) said that the N660 billion debt owed to them by the Federal Government for products already imported, coupled with interest on bank loans, had been their major hindrance to petroleum importation.According to the Executive Secretary, Mr Olufemi Adewole, most marketers had stopped importing fuel due to government’s refusal to pay outstanding debt owed.The inability to pay or service the loans has not only stalled further importation of fuel but is threatening the operation of the affected banks and the nation’s financial industry at large.",
+"Reuters reports that the Senegalese army will enter The Gambia if Mr. Jammeh does not step down by midnight, local time. Colonel Abdou Ndiaye, spokesperson for the Senegalese army, confirmed this to the news agency on Wednesday.We are ready and are awaiting the deadline at midnight. If no political solution is found, we will step in, Mr. Ndiaye told Reuters.In preparation for potential military intervention, Nigeria deployed a warship to the Gambian coast on Tuesday and is willing to contribute 200 troops to the ECOWAS regional force.",
+"The Commissioner of Police (CP) in Lagos State, Fatai Owoseni, will be leaving his position days after he was accused of being part of a plot to harm the publisher of SaharaReporters, Omoyele Sowore.Police authorities have decided to send the CP to the National Institute of Policy and Strategic Studies (NIPSS). A police source disclosed that Mr. Owoseni’s conduct in the case involving Mr. Sowore hastened his redeployment.According to our source, the Oba of Lagos, Rilwan Akiolu, had reportedly obstructed the redeployment of the CP from Lagos until the recent incident. Oba Akiolu is a retired police officer.")
 
 function findMissing(arr1,arr2){
    //Compares the typed words with the provided texts and gets the number of mistakes recorded. 
