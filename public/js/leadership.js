@@ -28,11 +28,13 @@ var username = localStorage.getItem("username");
 			  tdLN.innerHTML = userDetails[customer]['displayname'];
 
 			  var tdT = document.createElement('TD');
-			  tdT.innerHTML = userDetails[customer]['time'];			
-			  var tdM = document.createElement('TD');
-			  tdM.innerHTML = userDetails[customer]['mistake'];
+			  tdT.innerHTML = userDetails[customer]['time'];
+
 			  var tdW = document.createElement('TD');
 			  tdW.innerHTML = userDetails[customer]['wpm']
+
+			  var tdM = document.createElement('TD');
+			  tdM.innerHTML = userDetails[customer]['mistake'];
 			  
 			  var tr = document.createElement('TR');
 			  tr.appendChild(tdFN);
