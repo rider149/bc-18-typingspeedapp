@@ -21,8 +21,8 @@ var username = localStorage.getItem("username");
         	console.log(customer);
         	console.log(userDetails[customer])
         	// for(details in userDetails[customer]) {
-        		var tdFN = document.createElement('TD');
-			  tdFN.innerHTML = userDetails[customer]['profilePic'];
+     //    		var tdFN = document.createElement('TD');
+			  // tdFN.innerHTML = userDetails[customer]['profilePic'];
 			  
 			  var tdLN = document.createElement('TD');
 			  tdLN.innerHTML = userDetails[customer]['displayname'];
@@ -37,7 +37,7 @@ var username = localStorage.getItem("username");
 			  tdM.innerHTML = userDetails[customer]['mistake'];
 			  
 			  var tr = document.createElement('TR');
-			  tr.appendChild(tdFN);
+			  // tr.appendChild(tdFN);
 			  tr.appendChild(tdLN);
 			  tr.appendChild(tdT);
 			  tr.appendChild(tdW);
