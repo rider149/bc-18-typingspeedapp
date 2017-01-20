@@ -51,7 +51,7 @@ function holdValues(totalTime,error,Gspd){
   	"profilePic": profilePic,	
     "time": totalTime,
     "mistake": error,
-    "wpm ": Gspd
+    "wpm": Gspd
   });
 }
 
@@ -116,7 +116,7 @@ Nspd = Gspd-error;
 var accuracy = (Nspd/Gspd)*100;
 
 holdValues(totalTime,error,Gspd);
-alertify.alert("<title>Results</title><p style=\"text-align:center\"><h3>HERE ARE YOUR RESULTS</br></br></h3>"+"<table class=\"table table-striped\"><tr><td>Time spent:</td><td>"+Math.round(totalTime)+"\t"+"seconds</td></tr>"+"<tr><td>Speed:</td><td>"+Gspd+"\t"+"words per minute</td></tr>"+"<tr><td>Mistake(s):</td><td>"+error+"\t"+"mistakes</td></tr></table>");
+alertify.alert("<p style=\"text-align:center\"><h3>HERE ARE YOUR RESULTS</br></br></h3>"+"<table class=\"table table-striped\"><tr><td>Time spent:</td><td>"+Math.round(totalTime)+"\t"+"seconds</td></tr>"+"<tr><td>Speed:</td><td>"+Gspd+"\t"+"words per minute</td></tr>"+"<tr><td>Mistake(s):</td><td>"+error+"\t"+"mistakes</td></tr></table>");
 }
 
 
