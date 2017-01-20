@@ -9,8 +9,7 @@ Introduction
         Generates random text for user to type
         Measures how fast a user types by words per minute
         Displays the number of errors the user made
-        Displays the time taken to type the given text 
-    Click here to access the app on Heroku
+        Displays the time taken to type the given text
 
 Dependencies
 Back End Dependencies
@@ -49,11 +48,15 @@ Installation and setup
         nodemon server.js
         Running the command above will produce output that's similar to the sample below.
 
-      [nodemon] 1.11.0
-      [nodemon] to restart at any time, enter `rs`
-      [nodemon] watching: *.*
-      [nodemon] starting `node server.js`
-      Node app is running on port 5000
+            [nodemon] 1.11.0
+            [nodemon] to restart at any time, enter `rs`
+            [nodemon] watching: *.*
+            [nodemon] starting `node server.js`
+            Node app is running on port 5000
+      
+       Navigate to your browser and enter the following url
+            localhost:5000/
+       
 
 
 
