@@ -18,8 +18,8 @@ var username = localStorage.getItem("username");
         //setPicture(userDetails.profile_picture)
 
         for(customer in userDetails) {
-        	console.log(customer);
-        	console.log(userDetails[customer])
+        	// console.log(customer);
+        	// console.log(userDetails[customer])
         	// for(details in userDetails[customer]) {
      //    		var tdFN = document.createElement('TD');
 			  // tdFN.innerHTML = userDetails[customer]['profilePic'];

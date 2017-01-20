@@ -36,7 +36,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
    $("#logout").on("click", function(){
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
-          console.log("signout");
+          // console.log("signout");
           window.location.href = "/logout.html";
         }, function(error) {
           // An error happened.
