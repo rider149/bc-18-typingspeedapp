@@ -99,7 +99,7 @@ document.theForm.typed.select();
 
 function preventCopyAndPaste() {
 	// Prevents the user from copy and paste
-alert("You can not change that!");
+alertify.alert("<h3>Trying to Cheat!</h3></br><p><h4>You cannot copy and paste. You must type the words yourself</h4></p>");
 document.theForm.typed.focus();
 }
 
