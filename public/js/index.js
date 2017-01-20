@@ -46,7 +46,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 function holdValues(totalTime,error,Gspd){
 	//Uploads the values to firebase	
   	var database = firebase.database();
-    
+
   	firebase.database().ref('User/' + username).set({
   	"displayname": username,
 
@@ -106,6 +106,7 @@ document.theForm.typed.focus();
 }
 
 function stopTypingTest() { 
+  
 // Performs the basic calculations for words per minute, time taken and mistakes made 
 dayTwo = new Date();
 endTime = dayTwo.getTime();
@@ -120,5 +121,4 @@ var accuracy = (Nspd/Gspd)*100;
 holdValues(totalTime,error,Gspd);
 alertify.alert("<p style=\"text-align:center\"><h3>HERE ARE YOUR RESULTS:</br></br></h3>"+"<table class=\"table table-striped\"><tr><td>Time spent:</td><td>"+Math.round(totalTime)+"\t"+"seconds</td></tr>"+"<tr><td>Speed:</td><td>"+Gspd+"\t"+"words per minute</td></tr>"+"<tr><td>Mistake(s):</td><td>"+error+"\t"+"mistakes</td></tr></table>");
 }
-
 
