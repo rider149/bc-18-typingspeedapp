@@ -11,30 +11,44 @@ localStorage.setItem("username", username);
 var username = localStorage.getItem("username");
 
  //function to retrieve User details
-    {
+    firebase.database().ref('/User/').once('value', (snapshot) => {
         var userDetails = snapshot.val();
-      
-        for(var customer of userDetails) {
-  var tdFN = document.createElement('TD');
-  tdFN.innerHTML = customer.profilePic;
-  
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.displayname;
+      console.log(userDetails);
+        //getUsername(userDetails.name);
+        //setPicture(userDetails.profile_picture)
 
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.time;
+        for(customer in userDetails) {
+        	console.log(customer);
+        	console.log(userDetails[customer])
+        	// for(details in userDetails[customer]) {
+        		var tdFN = document.createElement('TD');
+			  tdFN.innerHTML = userDetails[customer]['profilePic'];
+			  
+			  var tdLN = document.createElement('TD');
+			  tdLN.innerHTML = userDetails[customer]['displayname'];
 
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.wpm;
+			  var tdT = document.createElement('TD');
+			  tdT.innerHTML = userDetails[customer]['time'];
 
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.mistake;
-  
-  var tr = document.createElement('TR');
-  tr.appendChild(tdFN);
-  tr.appendChild(tdLN);
-  
-  document.querySelector('table.table.table-striped tbody').appendChild(tr);
-}
+			  var tdW = document.createElement('TD');
+			  tdW.innerHTML = userDetails[customer]['wpm']
+
+			  var tdM = document.createElement('TD');
+			  tdM.innerHTML = userDetails[customer]['mistake'];
+			  
+			  var tr = document.createElement('TR');
+			  tr.appendChild(tdFN);
+			  tr.appendChild(tdLN);
+			  tr.appendChild(tdT);
+			  tr.appendChild(tdW);
+			  tr.appendChild(tdM);
+
+			  
+			  document.querySelector('table.table.table-striped tbody').appendChild(tr);
+
+
+        	 // }
+        }
+ 
     });
 

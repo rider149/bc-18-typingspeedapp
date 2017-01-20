@@ -12,32 +12,46 @@
 
 	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 	<script src="js/leadership.js"></script>
-</head>
-<script type="text/javascript">
-	for(var customer of userDetails) {
-  var tdFN = document.createElement('TD');
-  tdFN.innerHTML = customer.profilePic;
-  
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.displayname;
 
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.time;
+	<style type="text/css">
 
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.wpm;
-
-  var tdLN = document.createElement('TD');
-  tdLN.innerHTML = customer.mistake;
+.jumbotron {
   
-  var tr = document.createElement('TR');
-  tr.appendChild(tdFN);
-  tr.appendChild(tdLN);
+   posistion:relative;
+  z-index: 2;
+  box-shadow: 0 8px 16px -2px black;
   
-  document.querySelector('table.table.table-striped tbody').appendChild(tr);
 }
-</script>
+
+
+</style>
+</head>
 <body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/leadersboard">Leadersboard</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul id = "demo" class="nav navbar-nav">
+        
+       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <div class="jumbotron">
+    <h1>Typing Speed App</h1>
 	<table class="table table-striped">
   <thead>
     <tr>
@@ -47,7 +61,20 @@
   <tbody>
     <tr id="scoreList">
     </tr>
-  </tbody>
+    <tr id="scoreList">
+    </tr>
+    <tr id="scoreList">
+    </tr>
+    <tr id="scoreList">
+    </tr>
+    <tr id="scoreList">
+    </tr>
+      </tbody>
 </table>
+</div>
+</div>
+<div id="footer" style="text-align:center">
+	Developed by Nwaokafor Francis, 2017
+</div>
 	</body>
 	</html>

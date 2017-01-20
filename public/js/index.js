@@ -89,7 +89,7 @@ function startTypingTest() {
 //Provides the user with a random text	
 randNum = Math.floor((Math.random() * 10)) % 4;
 msgType = msg[randNum];
-word=msgType.split(/\s+/);
+word = msgType.split(/\s+/);
 day = new Date();
 startTime = day.getTime();
 document.theForm.given.value = msgType
@@ -107,16 +107,16 @@ function stopTypingTest() {
 // Performs the basic calculations for words per minute, time taken and mistakes made 
 dayTwo = new Date();
 endTime = dayTwo.getTime();
-userwords= document.theForm.typed.value;
-words=userwords.split(/\s+/);
-error=findMissing(words,word);
+userwords = document.theForm.typed.value;
+words = userwords.split(/\s+/);
+error = findMissing(words,word);
 totalTime = ((endTime - startTime) / 1000);
 Gspd = Math.round((word.length/totalTime) * 60);
-Nspd=Gspd-error;
-var accuracy= (Nspd/Gspd)*100;
+Nspd = Gspd-error;
+var accuracy = (Nspd/Gspd)*100;
 
 holdValues(totalTime,error,Gspd);
-alert("HERE ARE YOUR RESULTS:"+"\n\n"+"Time spent:"+Math.round(totalTime)+"seconds\n\n"+"Speed:"+Gspd+"\n\n"+"Mistake:"+error+"\n\n");
+alertify.alert("<title>Results</title><p style=\"text-align:center\"><h3>HERE ARE YOUR RESULTS</br></br></h3>"+"<table class=\"table table-striped\"><tr><td>Time spent:</td><td>"+Math.round(totalTime)+"\t"+"seconds</td></tr>"+"<tr><td>Speed:</td><td>"+Gspd+"\t"+"words per minute</td></tr>"+"<tr><td>Mistake(s):</td><td>"+error+"\t"+"mistakes</td></tr></table>");
 }
 
 
