@@ -48,6 +48,7 @@ function holdValues(totalTime,error,Gspd){
   	var database = firebase.database();
   	firebase.database().ref('User/' + username).set({
   	"displayname": username,
+    
   	// "profilePic": profilePic,	
     "time": totalTime,
     "mistake": error,
