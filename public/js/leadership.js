@@ -11,7 +11,7 @@ localStorage.setItem("username", username);
 var username = localStorage.getItem("username");
 
  //function to retrieve User details
-    firebase.database().ref('/User/').once('value', (snapshot) => {
+    firebase.database().ref('/User/').orderByChild("wpm").once('value', (snapshot) => {
         var userDetails = snapshot.val();
       console.log(userDetails);
         //getUsername(userDetails.name);

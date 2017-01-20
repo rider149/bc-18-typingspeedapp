@@ -13,11 +13,11 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var user = result.user;
 
   username = user.displayName;
+  profilePic = user.photoURL ;
   localStorage.setItem("username", username);
 
 
-  username = user.displayName
-  profilePic = user.photoURL 
+  
   // ...
 }).catch(function(error) {
   // Handle Errors here.
